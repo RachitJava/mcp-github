@@ -18,3 +18,33 @@ A Model Context Protocol (MCP) server that provides an AI agent with secure acce
 - **Frameworks**: We recommend using `Jest` for executing test suites.
 - **Mocking**: Testing relies on mocking the `axiosInstance` using libraries like `nock` or `axios-mock-adapter` to simulate GitHub API responses without requiring an active internet connection or hitting API rate limits.
 - **Integration Tests**: Creating a mock MCP Client using `@modelcontextprotocol/sdk/client` to test the end-to-end flow of standard `CallTool` requests.
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js (v16 or higher)
+- A GitHub Personal Access Token (PAT)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/RachitJava/mcp-github.git
+   cd mcp-github
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Build the project:
+   ```bash
+   npm run build
+   ```
+
+### Running the Server
+The server requires the `GITHUB_TOKEN` environment variable to be set. You can run it directly:
+```bash
+export GITHUB_TOKEN="your_personal_access_token_here"
+npm start
+```
+
+*Note: Since this is an MCP server, it is meant to be run by an MCP client (like Claude Desktop) rather than manually.*
